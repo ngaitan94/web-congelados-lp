@@ -15,7 +15,7 @@ const {
 } = Astro.props;
 
 const thumbnailUrl = `https://i.ytimg.com/vi/${videoId}/${poster}.jpg`;
-const uniqueId = `youtube-${videoId}-${Math.random().toString(36).substr(2, 9)}`;
+const uniqueId = `youtube-${videoId}-${Math.random().toString(36).slice(2, 11)}`;
 ---
 
 <!-- Contenedor del video -->
@@ -34,7 +34,7 @@ const uniqueId = `youtube-${videoId}-${Math.random().toString(36).substr(2, 9)}`
   </lite-youtube>
 </div>
 
-<script define:vars={{ videoId, uniqueId }}>
+<script is:inline define:vars={{ videoId, uniqueId }}>
   // Importar lite-youtube-embed
   import('lite-youtube-embed');
   
@@ -57,7 +57,7 @@ const uniqueId = `youtube-${videoId}-${Math.random().toString(36).substr(2, 9)}`
       iframe.width = '100%';
       iframe.height = '100%';
       iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1&start=0`;
-      iframe.frameBorder = '0';
+      iframe.setAttribute('frameborder', '0');
       iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
       iframe.allowFullscreen = true;
       iframe.style.borderRadius = 'inherit';

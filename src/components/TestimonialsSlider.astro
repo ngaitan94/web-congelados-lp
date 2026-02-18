@@ -261,7 +261,7 @@ import { slide } from "astro:transitions";
 <script>
     const slides = document.querySelectorAll('.testimonial-slider .slide');
 
-    slides.forEach((slide, index) => {
+    slides.forEach((slide) => {
         slide.addEventListener('mouseover', () => {
             document.querySelector('.testimonial-slider .slide.active')?.classList.remove('active');
             slide.classList.add('active');
