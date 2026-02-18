@@ -1,0 +1,77 @@
+---
+interface Props {
+    overline?: string;
+    headline: string;
+    subline?: string;
+    body?: string;
+}
+
+const { overline = "", headline, subline = "", body = ""} = Astro.props;
+---
+
+<section class="heading">
+    <div class="wrapper main-wrapper">
+        <h2>
+            <span class="overline">{overline}</span>
+            <span class="headline">{headline}</span>
+            <span class="subline">{subline}</span>
+        </h2>
+    
+        <p class="body">
+            {body}
+        </p>
+    </div>
+</section>
+
+<style>
+    .heading {
+        width: 100%;
+    }
+
+    .heading .wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: var(--gap-large) 0;
+    }
+
+    .heading .wrapper h2 span {
+        text-align: center;
+        display: block;
+        color: var(--color-primary);
+    }
+
+    .heading .wrapper h2 .overline {
+        font-family: var(--font-body);
+        font-size: 1.5rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+    }
+
+    .heading .wrapper h2 .headline {
+        font-family: var(--font-headline);
+        font-size: 7rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        line-height: 1;
+    }
+
+    .heading .wrapper h2 .subline {
+        font-family: var(--font-special);
+        font-size: 4rem;
+        font-weight: 400;
+        text-transform: none;
+        line-height: 0;
+    }
+
+    .heading .wrapper .body {
+        margin-top: 4rem;
+        font-family: var(--font-body);
+        font-size: 1.5rem;
+        color: var(--color-text);
+        text-align: center;
+        line-height: 1.3;
+    }
+</style>

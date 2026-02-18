@@ -1,0 +1,434 @@
+---
+import LiteYoutube from "./LiteYoutube.astro";
+import NutritionalTable from "./NutritionalTable.astro";
+---
+
+<div class="hero-slider swiper">
+    <div class="swiper-wrapper">
+            <div class="swiper-slide slide">
+                <div class="product main-wrapper">
+                    <div class="column left">
+                        <h2 data-aos="fade-up" data-aos-delay="400">Preparación</h2> <!-- Corrected spelling -->
+                        <p data-aos="zoom-in" data-aos-delay="400">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu nisl bibendum, accumsan velit sed, vulputate nisi. Proin hendrerit ligula in diam suscipit pellentesque.</p>
+
+                        <div class="pill" data-aos="flip-left" data-aos-delay="800">
+                            <span class="digit">8</span>
+                            <span class="label">minutos</span> <!-- Corrected spelling -->
+                        </div>
+
+                        <div class="price" data-aos="fade-up" data-aos-delay="1000">
+                            <span>PRECIO AL DETALLE</span> <!-- Corrected spelling -->
+                            <span>$9.990</span>
+                        </div>
+                    </div>
+
+                    <div class="column center">
+                        <img src="/assets/products/aji-de-gallina.png" alt="d" data-aos="zoom-in" />
+
+                        <div class="badge" data-aos="fade-up" data-aos-delay="1400">
+                            <span class="number">20</span>
+                            <span class="unity">gramos</span> <!-- Corrected spelling -->
+                            <span class="nutrient">proteína</span> <!-- Corrected spelling -->
+                        </div>
+                    </div>
+
+                    <div class="column right">
+                        <h2 data-aos="fade-up" data-aos-delay="400">Ingredientes</h2> <!-- Corrected spelling -->
+                        <p data-aos="zoom-in" data-aos-delay="400">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu nisl bibendum, accumsan velit sed, vulputate nisi. Proin hendrerit ligula in diam suscipit pellentesque.</p>
+
+                        <div class="pill" data-aos="flip-left" data-aos-delay="800">
+                            <span class="digit">4</span>
+                            <span class="label">porciones</span> <!-- Corrected spelling -->
+                        </div>
+
+                        <div class="price" data-aos="fade-up" data-aos-delay="1000">
+                            <span>CONTENIDO NETO</span> <!-- Corrected spelling -->
+                            <span>250gr</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content main-wrapper">
+                    <h2>Aji de gallina</h2>
+                    <p>Un curry que viaja desde el sudeste asiático hasta las costas chilenas, donde el camarón ha sido un protagonista indiscutible. Es fresco, aromático y equilibrado. Un plato que simboliza el Chile contemporáneo: abierto al mundo, pero con raíces firmes en el mar.</p>
+
+                    <div class="recipes">
+                        <div class="bg">
+                            <span>Recetas</span>
+                            <span>Recetas</span>
+                        </div>
+                        <LiteYoutube videoId="UdnT9ka7yAk" />
+                    </div>
+
+                    <div class="nutrition">
+                        <div class="heading">
+                            <h2>NUTRICIÓN</h2> <!-- Corrected spelling -->
+                        </div>
+
+                        <div class="column info">
+                            <p class="ingredients">
+                                <span>Ingredientes: </span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu nisl bibendum, accumsan velit sed, vulputate nisi. Proin hendrerit ligula in diam suscipit pellentesque.
+                            </p>
+
+                            <p class="preparation">
+                                <span>Preparación: </span> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu nisl bibendum, accumsan velit sed, vulputate nisi. Proin hendrerit ligula in diam suscipit pellentesque.
+                            </p>
+
+                            <div class="local-stamps">
+                                <img src="/assets/nutricion/sello_sodio.png" alt="">
+                                <img src="/assets/nutricion/sello_sodio.png" alt="">
+                                <img src="/assets/nutricion/sello_sodio.png" alt="">
+                                <img src="/assets/nutricion/sello_sodio.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="column table" data-aos="zoom-in">
+                            <NutritionalTable />
+                        </div>
+
+                        <div class="column stamps">
+                            <p class="ingredients">
+                                <span>Ingredientes: </span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu nisl bibendum, accumsan velit sed, vulputate nisi. Proin hendrerit ligula in diam suscipit pellentesque.
+                            </p>
+
+                            <p class="preparation">
+                                <span>Preparación: </span> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu nisl bibendum, accumsan velit sed, vulputate nisi. Proin hendrerit ligula in diam suscipit pellentesque.
+                            </p>
+
+                            <div class="local-stamps">
+                                <img src="/assets/nutricion/sello_sodio.png" alt="">
+                                <img src="/assets/nutricion/sello_sodio.png" alt="">
+                                <img src="/assets/nutricion/sello_sodio.png" alt="">
+                                <img src="/assets/nutricion/sello_sodio.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+</div>
+
+<style>
+    .hero-slider {
+        width: 100%;
+        position: relative;
+    }
+
+    .hero-slider .swiper-slide {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .hero-slider .slide .product {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .hero-slider .slide .product .column {
+        flex: 1;
+    }
+
+    .hero-slider .slide .product .column.center {
+        flex: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+
+    .hero-slider .slide .product .column.center img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .hero-slider .slide .product .column .pill {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: .8rem 1.5rem;
+        min-width: 150px;
+        border: 2px solid var(--color-primary);
+        border-bottom: 4px solid var(--color-primary);
+        border-radius: 3rem;
+    }
+
+    .hero-slider .slide .product .column .pill .digit {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-right: 0.5rem;
+        font-family: var(--font-headline);
+        color: var(--color-primary);
+    }
+
+    .hero-slider .slide .product .column .pill .label {
+        font-size: 1rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        font-family: var(--font-body);
+        color: #000000;
+    }
+
+    .hero-slider .slide .product .column .badge {
+        width: 100px;
+        height: 100px;
+        display: flex;
+        border: 5px solid var(--color-primary);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        bottom: 0px;
+        right: 50px;
+        border-radius: 50%;
+        background-color: var(--color-light);
+        text-align: center;
+        font-weight: bold;
+        transform: rotate(-10deg);
+    }
+
+    .hero-slider .slide .product .column .badge span {
+        display: block;
+        color: var(--color-primary);
+    }
+
+    .hero-slider .slide .product .column .badge span.number {
+        font-size: 2.5rem;
+        line-height: 1;
+        font-weight: 900;
+        color: var(--color-primary);
+    }
+
+    .hero-slider .slide .product .column .badge span.unity {
+        font-size: .8rem;
+        line-height: 1;
+        text-transform: uppercase;
+        color: var(--color-primary);
+    }
+
+    .hero-slider .slide .product .column .badge span.nutrient {
+        font-size: .7rem;
+        font-weight: 300;
+        line-height: 1;
+        text-transform: uppercase;
+        color: var(--color-primary);
+    }
+
+    .hero-slider .slide .product .column h2 {
+        font-family: var(--font-headline);
+        font-size: 1rem;
+        font-weight: 800;
+        line-height: 1.5;
+        color: var(--color-primary);
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        text-wrap: pretty;
+    }
+
+    .hero-slider .slide .product .column p {
+        font-family: var(--font-body);
+        font-size: 1rem;
+        line-height: 1.5;
+        color: var(--color-text);
+        margin-bottom: 2rem;
+        text-wrap: pretty;
+    }
+
+    .hero-slider .slide .product .column .price {
+        display: flex;
+        flex-direction: column;
+        margin-top: 2rem;
+        margin-bottom: 10rem;
+        font-weight: bold;
+        text-align: center;
+        color: var(--color-primary);
+        border: 2px solid var(--color-primary);
+        border-radius: 1.5rem;
+        padding: 1rem;
+        padding-bottom: .5rem;
+    }
+
+    .hero-slider .slide .product .column .price span:first-child {
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        line-height: 1;
+        font-weight: 400;
+        font-family: var(--font-body);
+        margin-bottom: .5rem;
+    }
+
+    .hero-slider .slide .product .column .price span {
+        font-size: 2.5rem;
+        line-height: 1;
+        font-weight: 900;
+        font-family: var(--font-headline);
+    }
+
+    .hero-slider .slide .content.main-wrapper {
+        max-width: var(--main-wrapper-large);
+    }
+
+    .hero-slider .slide .content h2 {
+        width: 80%;
+        margin: 0 auto;
+        font-family: var(--font-headline);
+        font-size: 5rem;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        font-weight: 900;
+        color: var(--color-primary);
+    }
+
+    .hero-slider .slide .content p {
+        width: 100%;
+        margin: 0 auto;
+        font-family: var(--font-body);
+        font-size: 1.2rem;
+        line-height: 1.5;
+        color: #333333;
+        margin-bottom: 4rem;
+    }
+
+    .hero-slider .slide .content .recipes {
+        position: relative;
+        margin: 0 auto;
+        margin-bottom: 6rem;
+    }
+
+    .hero-slider .slide .content .recipes .bg {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: var(--bg-layer);
+    }
+
+    .hero-slider .slide .content .recipes .bg span {
+        font-family: var(--font-headline);
+        font-size: 6rem;
+        font-weight: 900;
+        color: var(--color-primary);
+        text-transform: uppercase;
+        line-height: 1;
+        user-select: none;
+        opacity: .1;
+    }
+
+    .hero-slider .slide .content .recipes .bg span:first-child + span {
+        transform: translateX(10%);
+    }
+
+    .hero-slider .slide .content .nutrition {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 4rem 0;
+        gap: var(--gap-large);
+        border-radius: var(--border-radius);
+        background-color: var(--color-background);
+
+        position: relative;
+    }
+
+    .hero-slider .slide .content .nutrition .heading h2 {
+        width: max-content;
+        position: absolute;
+        top: -2rem;
+        left: 0%;
+        z-index: var(--text-layer);
+    }
+
+    .hero-slider .slide .content .nutrition .column {
+        flex: 1;
+    }
+
+    .hero-slider .slide .content .nutrition .column p {
+        font-family: var(--font-body);
+        font-size: .8rem;
+        line-height: 1.5;
+        text-align: left;
+        color: var(--color-text);
+        margin-bottom: 2rem;
+    }
+
+    .hero-slider .slide .content .nutrition .column p span {
+        font-weight: bold;
+        color: var(--color-dark);
+    }
+
+    .hero-slider .slide .content .nutrition .column .local-stamps {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .hero-slider .slide .content .nutrition .column .local-stamps img {
+        width: 60px;
+    }
+
+</style>
+
+<script>
+    import Swiper from 'swiper/bundle';
+    import 'swiper/css/bundle';
+        
+    document.addEventListener('DOMContentLoaded', () => {
+
+
+        const swiper = new Swiper('.hero-slider', {
+            on: {
+                init: function () {
+                    console.log('Swiper initialized');
+                }
+            },
+            // Efecto fade <!-- Corrected spelling -->rameters
+            loop: true,
+            slidesPerView: 1,
+            speed: 1500,
+
+            // Efecto fade
+            effect: 'fade',
+            fadeEffect: {
+                crossFade: true
+            },
+    
+            autoplay: {
+                delay: 10000,
+            },
+
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+
+        const recipesSectionHeadings = document.querySelectorAll('.recipes .bg span');
+
+        recipesSectionHeadings.forEach(heading => {
+            const text = heading.textContent;
+
+            heading.textContent = text + text + text + text;
+        });
+
+
+
+    });
+</script>

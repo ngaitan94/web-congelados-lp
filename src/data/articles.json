@@ -1,0 +1,31 @@
+[
+    {
+    "title": "Tendencias de diseño web en 2025",
+    "excerpt": "Descubre los estilos, animaciones y enfoques UX/UI que están marcando el diseño web este año.",
+    "category": "Diseño Web",
+    "imageUrl": "/assets/blog/img_01.png",
+    "link": "/blog/tendencias-diseno-web-2025"
+    },
+    {
+    "title": "Qué es el growth hacking y por qué tu negocio lo necesita",
+    "excerpt": "Una introducción clara al growth hacking y cómo aplicarlo para escalar tu negocio digital.",
+    "category": "Marketing Digital",
+    "imageUrl": "/assets/blog/img_02.png",
+    "link": "/blog/que-es-growth-hacking"
+    },
+    {
+    "title": "SEO técnico: errores comunes que afectan tu posicionamiento",
+    "excerpt": "Revisamos los fallos técnicos más frecuentes que impactan negativamente en el SEO de tu sitio.",
+    "category": "SEO",
+    "imageUrl": "/assets/blog/img_01.png",
+    "link": "/blog/seo-tecnico-errores-comunes"
+    },
+    {
+    "title": "Cómo optimizar la velocidad de carga de tu sitio web",
+    "excerpt": "Buenas prácticas y herramientas clave para mejorar el rendimiento y la experiencia de usuario.",
+    "category": "Desarrollo Web",
+    "imageUrl": "/assets/blog/img_02.png",
+    "link": "/blog/optimizar-velocidad-web"
+    }
+]
+  

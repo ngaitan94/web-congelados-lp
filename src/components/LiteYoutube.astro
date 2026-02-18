@@ -1,0 +1,139 @@
+---
+// src/components/LiteYoutube.astro
+export interface Props {
+  videoId: string;
+  title?: string;
+  poster?: 'default' | 'hqdefault' | 'maxresdefault';
+  class?: string;
+}
+
+const { 
+  videoId, 
+  title = "Video de YouTube", 
+  poster = "hqdefault",
+  class: className = ""
+} = Astro.props;
+
+const thumbnailUrl = `https://i.ytimg.com/vi/${videoId}/${poster}.jpg`;
+const uniqueId = `youtube-${videoId}-${Math.random().toString(36).substr(2, 9)}`;
+---
+
+<!-- Contenedor del video -->
+<div class="youtube-container" id={`container-${uniqueId}`} data-aos="zoom-in">
+  <!-- Video inicial con autoplay muted -->
+  <lite-youtube 
+    id={uniqueId}
+    videoid={videoId} 
+    playlabel={`Reproducir: ${title}`}
+    params="autoplay=1&mute=1&rel=0&modestbranding=1&loop=1&playlist={videoId}"
+    class={className}
+    style={`background-image: url('${thumbnailUrl}');`}
+  >
+    <div class="lty-playbtn"> 
+    </div>
+  </lite-youtube>
+</div>
+
+<script define:vars={{ videoId, uniqueId }}>
+  // Importar lite-youtube-embed
+  import('lite-youtube-embed');
+  
+  document.addEventListener('DOMContentLoaded', function() {
+    const container = document.getElementById(`container-${uniqueId}`);
+    const liteYoutube = document.getElementById(uniqueId);
+    let hasBeenClicked = false;
+    
+    // Interceptar el click en lite-youtube
+    liteYoutube.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      // Evitar múltiples clicks
+      if (hasBeenClicked) return;
+      hasBeenClicked = true;
+      
+      // Crear nuevo iframe con audio activado desde el principio
+      const iframe = document.createElement('iframe');
+      iframe.width = '100%';
+      iframe.height = '100%';
+      iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1&start=0`;
+      iframe.frameBorder = '0';
+      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+      iframe.allowFullscreen = true;
+      iframe.style.borderRadius = 'inherit';
+      
+      // Reemplazar lite-youtube con iframe
+      container.innerHTML = '';
+      container.appendChild(iframe);
+    });
+  });
+</script>
+
+<style>
+  @import 'lite-youtube-embed/src/lite-yt-embed.css';
+  
+  /* Contenedor del video */
+  .youtube-container {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    aspect-ratio: 16/9;
+    max-width: 768px;
+    border-radius: var(--border-radius);
+    border: 4px solid var(--color-primary);
+    overflow: hidden;
+  }
+  
+  .youtube-container iframe {
+    object-fit: cover;
+  }
+  
+  /* Estilos para lite-youtube */
+  lite-youtube {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    width: 100%;
+    max-width: 600px;
+    height: 100%;
+    aspect-ratio: 16/9;
+    max-width: 100%;
+  }
+  
+  lite-youtube:hover {
+    transform: scale(1.02);
+  }
+  
+  /* Usar el botón por defecto de lite-youtube (se ve mejor) */
+  lite-youtube .lty-playbtn {
+    /* Mantener estilos por defecto, solo agregar hover suave */
+    transition: all 0.3s ease;
+  }
+  
+  lite-youtube:hover .lty-playbtn {
+    transform: scale(1.1);
+  }
+  
+  /* Accesibilidad */
+  .lty-visually-hidden {
+    position: absolute !important;
+    clip: rect(1px, 1px, 1px, 1px);
+    padding: 0 !important;
+    border: 0 !important;
+    height: 1px !important;
+    width: 1px !important;
+    overflow: hidden;
+  }
+  
+  /* Focus states */
+  lite-youtube:focus {
+    outline: 2px solid #ff0000;
+    outline-offset: 2px;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    lite-youtube:hover {
+      transform: none; /* Desactivar hover en móviles */
+    }
+  }
+</style>

@@ -1,0 +1,67 @@
+---
+import BlogCard from '../components/BlogCard.astro';
+
+import articles from '../data/articles.json';
+---
+
+<section id="blog">
+    <div class="main-wrapper">
+        <div class="heading">
+            <h2>Blog</h2>
+            <a href="#" class="cta">Ver artículos</a>
+        </div>
+
+        <div class="blog-grid flex-row gap-medium">
+            {articles.map((article) => (
+                <BlogCard 
+                    title={article.title} 
+                    excerpt={article.excerpt} 
+                    category={article.category} 
+                    imageUrl={article.imageUrl} 
+                    link={article.link} 
+                />
+            ))}
+        </div>
+    </div>
+</section>
+
+<style>
+    section#blog {
+        padding: 4rem 0;
+        background-color: var(--color-light);
+    }
+
+    .heading {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 2rem;
+    }
+
+    .heading h2 {
+        width: 50%;
+        text-transform: uppercase;
+        font-family: var(--font-headline);
+        font-size: 5rem;
+        color: var(--color-primary);
+        text-align: left;
+    }
+
+    .heading p {
+        width: 50%;
+        font-size: 1.2rem;
+        color: var(--color-text);
+        text-align: right;
+    }
+
+    .heading a {
+        display: inline-block;
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--color-primary);
+        text-decoration: underline;
+        text-transform: uppercase;
+    }
+</style>

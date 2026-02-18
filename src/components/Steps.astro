@@ -1,0 +1,196 @@
+---
+
+---
+
+<div class="steps">
+    <div class="step">
+        <div class="bg">
+            <h2 class="title">Saca</h2>
+        </div>
+
+        <div class="content main-wrapper">
+            <div class="image" data-aos="fade-right" data-aos-delay="400">
+                <img src="/assets/steps/step_01.png" alt="">
+            </div>
+
+            <div class="text" data-aos="zoom-in" data-aos-delay="800">
+                <span class="headline"><span class="number">1</span><h3 class="title">Saca</h3></span>
+                <p class="description">El viaje comienza aquí: cada plato está esperando para transformarse en una comida increíble.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="step reverse">
+        <div class="bg">
+            <h2 class="title">Calienta</h2>
+        </div>
+
+        <div class="content main-wrapper">
+            <div class="image" data-aos="fade-left" data-aos-delay="400">
+                <img src="/assets/steps/step_02.png" alt="">
+            </div>
+
+            <div class="text" data-aos="zoom-in" data-aos-delay="800">
+                <span class="headline"><span class="number">2</span><h3 class="title">Calienta</h3></span>
+                <p class="description">El vacío hace su magia. El calor despierta los jugos y aromas como si estuviera recién hecho.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="step">
+        <div class="bg">
+            <h2 class="title">Disfruta</h2>
+        </div>
+
+        <div class="content main-wrapper">
+            <div class="image" data-aos="fade-right" data-aos-delay="400">
+                <img src="/assets/steps/step_03.png" alt="">
+            </div>
+
+            <div class="text" data-aos="zoom-in" data-aos-delay="800">
+                <span class="headline"><span class="number">3</span><h3 class="title">Disfruta</h3></span>
+                <p class="description">Así de simple. Un plato gourmet, con sabor chileno, directo del agua caliente a tu mesa.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.steps {
+    display: flex;
+    flex-direction: column;
+}
+
+.steps .step {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    overflow: hidden;
+
+    position: relative;
+    z-index: var(--base-layer);
+}
+
+.steps .step.reverse {
+    flex-direction: row-reverse;
+}
+
+.steps .step .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.05;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: -1;
+}
+
+.steps .step .bg .title {
+    font-family: var(--font-headline);
+    font-size: 25rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--color-primary);
+    user-select: none;
+    pointer-events: none;
+    line-height: .1rem;
+    padding-top: 4rem;
+}
+
+.steps .step .content {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: var(--gap-medium);
+}
+
+.steps .step.reverse .content {
+    flex-direction: row-reverse;
+}
+
+.steps .step .content .image {
+    flex: 1;
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.steps .step.reverse .content .image {
+    justify-content: flex-start;
+}
+
+.steps .step .content .image img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    object-fit: contain;
+}
+
+.steps .step .content .text {
+    flex: 1;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.steps .step .content .text .headline {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    transform: translateX(-12rem);
+}
+
+.steps .step.reverse .content .text .headline {
+    flex-direction: row-reverse;
+    transform: translateX(12rem);
+    
+}
+
+.steps .step .content .text .headline .number {
+    width: 4rem;
+    height: 4rem;
+    background-color: var(--color-primary);
+    border-radius: 50%;
+    font-family: var(--font-headline);
+    font-size: 2rem;
+    line-height: 4.5rem;
+    font-weight: bold;
+    color: var(--color-light);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.steps .step .content .text .headline .title {
+    font-family: var(--font-headline);
+    font-size: 5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    margin: 0;
+}
+
+.steps .step .content .text .description {
+    font-family: var(--font-body);
+    font-size: 1.5rem;
+    line-height: 1.6;
+    color: var(--color-dark-grey);
+    margin: 0;
+}
+
+.steps .step.reverse .content .text .description {
+    text-align: right;
+}
+
+</style>

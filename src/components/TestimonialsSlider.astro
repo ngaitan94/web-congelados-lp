@@ -1,0 +1,270 @@
+---
+import { slide } from "astro:transitions";
+---
+
+<div class="testimonial-slider">
+    <div class="slide active" transition:animate={slide({ duration: '0.3s' })}>
+        <div class="header">
+            <div class="profile">
+                <img src="" alt="">
+            </div>
+
+            <div class="info">
+                <h3 class="name">Nombre Apellido</h3>
+                <p class="role">Rol o Profesión</p>
+            </div>
+        </div>
+
+        <div class="content">
+            <p class="testimonial">"Un curry que viaja desde el sudeste asiático hasta las costas chilenas, donde el camarón ha sido un protagonista indiscutible. Es fresco, aromático y equilibrado. Un plato que simboliza el Chile contemporáneo: abierto al mundo, pero con raíces firmes en el mar."</p>
+        </div>
+
+        <div class="footer">
+            <div class="rating">
+                ★★★★★
+            </div>
+
+            <div class="grade">
+                5,6
+            </div>
+        </div>
+    </div>
+
+    <div class="slide">
+        <div class="header">
+            <div class="profile">
+                <img src="" alt="">
+            </div>
+
+            <div class="info">
+                <h3 class="name">Nombre Apellido</h3>
+                <p class="role">Rol o Profesión</p>
+            </div>
+        </div>
+
+        <div class="content">
+            <p class="testimonial">"Este es un testimonio de ejemplo que resalta la calidad del producto y la experiencia del usuario. ¡Me encantó!"</p>
+        </div>
+
+        <div class="footer">
+            <div class="rating">
+                ★★★★★
+            </div>
+
+            <div class="grade">
+                5,6
+            </div>
+        </div>
+    </div>
+
+    <div class="slide">
+        <div class="header">
+            <div class="profile">
+                <img src="" alt="">
+            </div>
+
+            <div class="info">
+                <h3 class="name">Nombre Apellido</h3>
+                <p class="role">Rol o Profesión</p>
+            </div>
+        </div>
+
+        <div class="content">
+            <p class="testimonial">"Este es un testimonio de ejemplo que resalta la calidad del producto y la experiencia del usuario. ¡Me encantó!"</p>
+        </div>
+
+        <div class="footer">
+            <div class="rating">
+                ★★★★★
+            </div>
+
+            <div class="grade">
+                5,6
+            </div>
+        </div>
+    </div>
+
+    <div class="slide">
+        <div class="header">
+            <div class="profile">
+                <img src="" alt="">
+            </div>
+
+            <div class="info">
+                <h3 class="name">Nombre Apellido</h3>
+                <p class="role">Rol o Profesión</p>
+            </div>
+        </div>
+
+        <div class="content">
+            <p class="testimonial">"Este es un testimonio de ejemplo que resalta la calidad del producto y la experiencia del usuario. ¡Me encantó!"</p>
+        </div>
+
+        <div class="footer">
+            <div class="rating">
+                ★★★★★
+            </div>
+
+            <div class="grade">
+                5,6
+            </div>
+        </div>
+    </div>
+
+    <div class="slide">
+        <div class="header">
+            <div class="profile">
+                <img src="" alt="">
+            </div>
+
+            <div class="info">
+                <h3 class="name">Nombre Apellido</h3>
+                <p class="role">Rol o Profesión</p>
+            </div>
+        </div>
+
+        <div class="content">
+            <p class="testimonial">"Este es un testimonio de ejemplo que resalta la calidad del producto y la experiencia del usuario. ¡Me encantó!"</p>
+        </div>
+
+        <div class="footer">
+            <div class="rating">
+                ★★★★★
+            </div>
+
+            <div class="grade">
+                5,6
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.testimonial-slider {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    margin-bottom: 4rem;
+    margin-top: 4rem;
+}
+
+.testimonial-slider .slide {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-primary);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    font-family: var(--font-body);
+    transition: all .5s;
+}
+
+.testimonial-slider .slide.active {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+}
+
+.testimonial-slider .slide .header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+.testimonial-slider .slide .header .profile img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 1rem;
+    background-color: var(--color-light);
+}
+
+.testimonial-slider .slide .header .info .name {
+    display: none;
+    opacity: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--color-light);
+    transition: display .5s, opacity .5s;
+}
+
+.testimonial-slider .slide.active .header .info .name {
+    display: block;
+    opacity: 1;
+}
+
+.testimonial-slider .slide .header .info .role {
+    font-size: 1rem;
+    color: var(--color-light);
+    margin: 0;
+    display: none;
+    opacity: 0;
+    transition: display .5s, opacity .5s;
+}
+
+.testimonial-slider .slide.active .header .info .role {
+    display: block;
+    opacity: 1;
+}
+
+
+.testimonial-slider .slide .content {
+    display: none;
+    opacity: 0;
+    transition: display .5s, opacity .5s;
+}
+
+.testimonial-slider .slide.active .content {
+    display: block;
+    opacity: 1;
+}
+
+.testimonial-slider .slide .content .testimonial {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-bottom: 3rem;
+    color: var(--color-light);
+    font-style: italic;
+    font-weight: 100;
+    min-height: 150px;
+}
+
+.testimonial-slider .slide .footer {
+    display: none;
+    opacity: 0;
+    justify-content: space-between;
+    align-items: center;
+    transition: display .5s, opacity .5s;
+}
+
+.testimonial-slider .slide.active .footer {
+    display: flex;
+    opacity: 1;
+}
+
+.testimonial-slider .slide .footer .rating {
+    font-size: 1.5rem;
+    color: var(--color-light)
+}
+
+.testimonial-slider .slide .footer .grade {
+    font-size: 3rem;
+    font-family: var(--font-headline);
+    font-weight: bold;
+    color: var(--color-light);
+}
+</style>
+
+<script>
+    const slides = document.querySelectorAll('.testimonial-slider .slide');
+
+    slides.forEach((slide, index) => {
+        slide.addEventListener('mouseover', () => {
+            document.querySelector('.testimonial-slider .slide.active')?.classList.remove('active');
+            slide.classList.add('active');
+        });
+    });
+</script>

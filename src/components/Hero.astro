@@ -1,0 +1,109 @@
+---
+
+---
+
+<section class="single-hero">
+    <div class="bg">
+        <img src="/assets/hero/background-desktop.png" alt="">
+        <img src="/assets/hero/background-mobile.png" alt="">
+    </div>
+
+    <div class="captions main-wrapper">
+        <h1 class="headline" data-aos="fade-right">
+            RICO. <br>
+            FÁCIL. <br>
+            RÁPIDO.
+        </h1>
+        <p class="subline">
+            Comida gourmet, directo a tu mesa.
+        </p>
+        
+        <a href="#" class="cta">Ver productos</a>
+    </div>
+</section>
+
+<style>
+    .single-hero {
+        width: 100%;
+        height: 100dvh;
+        min-height: 100vh;
+        background-color: var(--color-light);
+
+        position: relative;
+        z-index: var(--base-layer);
+    }
+
+    .single-hero .bg {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: var(--bg-layer);
+    }
+
+    .single-hero .bg::after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        background-color: var(--color-overlay);
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: var(--deco-layer);
+    }
+
+    .single-hero .bg img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: right bottom;
+    }
+
+    .single-hero .captions {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+
+        position: relative;
+        z-index: var(--text-layer);
+    }
+
+    .single-hero .captions .headline {
+        width: 30%;
+        font-size: 5rem;
+        font-weight: bold;
+        color: var(--color-primary);
+        font-family: var(--font-headline);
+        margin-bottom: 1rem;
+        margin-top: 5rem;
+    }
+
+    .single-hero .captions .subline {
+        width: 30%;
+        font-size: 3rem;
+        line-height: 1;
+        color: var(--color-primary);
+        font-family: var(--font-special);
+    }
+
+    .single-hero .captions .cta {
+        font-weight: var(--font-body);
+        margin-top: 2rem;
+        display: inline-block;
+        padding: .8rem 2rem;
+        background-color: var(--color-dark);
+        border-radius: 3rem;
+        color: var(--color-light);
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+
+
+</style>
